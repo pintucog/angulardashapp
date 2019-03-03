@@ -1,0 +1,29 @@
+<p>
+  home works!
+</p>
+<div *ngIf="alldataprofile">
+	<table border="1" cellspacing="2" cellpadding="2" class="table table-hover" style="background-color:#cccccc;color: black;border: 2px solid;">
+		<tbody class="data">
+			<tr class="data" style="font-weight: bold;background-color: #595959">
+				<td>Delete</td>
+				<td>Export</td>
+				<td>Dashboard</td>
+				<td class="text-nowrap">Data Profile</td>
+				<td>Last Visited</td>
+				<td>Data Columns</td>
+				<td>Blank Columns</td>
+				<td>Total Records</td>
+			</tr>
+			<tr class="data" style="font-weight: normal;background-color: #ffffff" *ngFor="let dataprofile of alldataprofile">
+				<td>Delete</td>
+				<td>Export</td>
+				<td>Dashboard</td>
+				<td class="text-nowrap">{{dataprofile.profileid}}</td>
+				<td>{{dataprofile.lastvisited}}</td>
+				<td>{{dataprofile.dispcolumns}}</td>
+				<td>{{dataprofile.blankcol}}</td>
+				<td>{{dataprofile.totalrecord}}</td>
+			</tr>
+		</tbody>
+	</table>
+</div>

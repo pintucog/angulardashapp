@@ -1,0 +1,11 @@
+<div *ngIf="allplot">
+	<div *ngFor="let plot of allplot; let count=index">
+		<span>count = {{ count }}</span>
+		<span *ngIf="count%2 == 0; let classbool">ROW
+			<div id="{{plot.plotid}}" style="display: block;"></div>
+		</span>
+		<span *ngIf="count%2 != 0; let classbool">COL
+			<div id="{{plot.plotid}}" style="display: block;"></div>
+		</span>
+	</div>
+</div>
