@@ -10,3 +10,16 @@ export class Globals {
 	public profilelist: Array<{profileid: string, lastvisited: string, dispcolumns: string}> = [];
 	public dashplotlist: any;
 }
+
+export class DataProfileObj {
+	profileid: string;
+	lastmodified: string;
+	lastvisited: string;
+	dispcolumns: string;
+	totalrecord: number;
+	duprecord: number;
+	datasize: number;
+	totalblank: number;
+	totalcol: number;
+	blankcol: string;
+}

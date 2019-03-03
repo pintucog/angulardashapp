@@ -27,3 +27,8 @@
 </div>
 <span *ngIf="_userService.accesstoken">{{loadprofile()}}</span>
 <span>aa{{_globals.profilelist}}</span>
+<div *ngIf="_globals.profilelist">
+  <div *ngFor="let profile of _globals.profilelist">
+    {{profile.profileid}}
+  </div>
+</div>

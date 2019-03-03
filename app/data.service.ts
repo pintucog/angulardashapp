@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {UserService} from './user.service';
 import { Observable, of } from 'rxjs';
+import {DataProfileObj} from './globals'
 
 @Injectable({
   providedIn: 'root'
@@ -22,7 +23,7 @@ export class DataService {
   constructor(private http: HttpClient, private _userService: UserService) {
   }
 
-  public getalldataprofile(): Observable<any[]>{
+  public getalldataprofile(): Observable<DataProfileObj[]>{
   	console.log('in getalldataprofile')
   	console.log(this._userService.accesstoken)
   	if(this._userService.accesstoken != undefined){
@@ -35,7 +36,7 @@ export class DataService {
 	    };
 	    this.currentuser = this._userService.username
 	    console.log(this.currentuser)
-	  	this.http.get('http://127.0.0.1:8000/dataprofile/', this.httpOptions).subscribe(
+	  	this.http.get<DataProfileObj[]>('http://127.0.0.1:8000/dataprofile/', this.httpOptions).subscribe(
 	  		res => {
 	  			console.log(res)
 	  			this.alldataprofile = res
