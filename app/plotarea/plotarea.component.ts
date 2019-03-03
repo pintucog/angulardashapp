@@ -1,9 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import {HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
+import {DataService} from '../data.service';
 import {UserService} from '../user.service';
 import {throwError} from 'rxjs';
 import * as Plotly from 'plotly.js/dist/plotly.js';
 import {Config, Data, Layout} from 'plotly.js/dist/plotly.js';
+import { Globals } from '../globals';
+import {Router} from "@angular/router"
 
 @Component({
   selector: 'app-plotarea',
@@ -14,9 +17,28 @@ export class PlotareaComponent implements OnInit {
   public allplot: any;
   public dashfigure: any;
 
-  constructor(private http: HttpClient, private _userService: UserService) { }
+  constructor(
+    private http: HttpClient,
+    private _dataService: DataService,
+    private _userService: UserService,
+    private globals: Globals,
+    private router: Router
+  ) { }
 
   ngOnInit() {
+    console.log(this._userService.accesstoken)
+    if(this._userService.accesstoken == undefined){
+      this.router.navigate(['/login'])
+    }
+      
+
+
+    /*  this._dataService.getalldataprofile().then(profiles => )
+
+
+
+
+
     let httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
@@ -37,6 +59,6 @@ export class PlotareaComponent implements OnInit {
           });
         });
       });
-    }
+    }*/
   }
 }

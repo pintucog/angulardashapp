@@ -67,17 +67,17 @@ export class UserService {
     console.log(this.accesstoken)
     if(tokendata['refresh'] !== undefined){
     	this.refreshtoken = tokendata['refresh'];
-    	console.log(this.refreshtoken)
+    	//console.log(this.refreshtoken)
     }
     this.errors = [];
  	  console.log('updating token')
     // decode the token to read the username and expiration timestamp
     const token_parts = this.accesstoken.split(/\./);
-    console.log(token_parts)
+    //console.log(token_parts)
     const token_decoded = JSON.parse(window.atob(token_parts[1]));
     this.token_expires = new Date(token_decoded.exp * 1000);
     this.username = token_decoded.user_id;
-    console.log(token_decoded)
+    //console.log(token_decoded)
     console.log(this.username)
   }
 }

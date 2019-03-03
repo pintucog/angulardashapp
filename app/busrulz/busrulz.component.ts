@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HomeComponent } from '../home/home.component'
 
 @Component({
   selector: 'app-busrulz',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BusrulzComponent implements OnInit {
 
-  constructor() { }
+  constructor(private _homecomp: HomeComponent) { }
 
   ngOnInit() {
   }

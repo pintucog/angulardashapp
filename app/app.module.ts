@@ -15,7 +15,9 @@ import { AddprofileComponent } from './addprofile/addprofile.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { UserService } from './user.service';
+import { DataService } from './data.service';
 import { BusrulzComponent } from './busrulz/busrulz.component';
+import { Globals } from './globals';
 
 @NgModule({
   declarations: [
@@ -37,7 +39,7 @@ import { BusrulzComponent } from './busrulz/busrulz.component';
     FormsModule,
     HttpClientModule
   ],
-  providers: [UserService],
+  providers: [UserService, DataService, Globals],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

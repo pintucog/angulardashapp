@@ -25,3 +25,5 @@
     <button (click)="logout()" class="btn btn-primary">Log Out</button>
   </div>
 </div>
+<span *ngIf="_userService.accesstoken">{{loadprofile()}}</span>
+<span>aa{{_globals.profilelist}}</span>
